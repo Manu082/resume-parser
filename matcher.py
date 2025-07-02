@@ -2,8 +2,18 @@ import spacy
 
 class KeywordMatcher:
     def __init__(self, job_description):
-        self.nlp = spacy.load("en_core_web_sm")
+        self.nlp = self.load_spacy_model()
         self.keywords = self.extract_keywords(job_description)
+
+    def load_spacy_model(self):
+        try:
+            # Try to load the model if it's already installed
+            return spacy.load("en_core_web_sm")
+        except OSError:
+            # If not installed, download it programmatically
+            from spacy.cli import download
+            download("en_core_web_sm")
+            return spacy.load("en_core_web_sm")
 
     def extract_keywords(self, text):
         doc = self.nlp(text.lower())
