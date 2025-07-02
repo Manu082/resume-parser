@@ -3,15 +3,6 @@ from parser import ResumeParser
 from matcher import KeywordMatcher
 import pandas as pd
 import os
-import spacy
-try:
-    nlp = spacy.load("en_core_web_sm")
-except OSError:
-    # Model is not present, so download it
-    from spacy.cli import download
-    download("en_core_web_sm")
-    nlp = spacy.load("en_core_web_sm")
-
 
 st.title("Automated Resume Scanner")
 
