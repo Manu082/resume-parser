@@ -50,7 +50,8 @@ AutomatedResumeScanner/
 
 1️⃣ Clone the repository or download the folder:
 
-git clone https://github.com/yourusername/AutomatedResumeScanner.git
+git clone https://github.com/Manu082/AutomatedResumeScanner.git
+
 cd AutomatedResumeScanner
 
 
